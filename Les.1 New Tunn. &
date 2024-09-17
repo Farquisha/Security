@@ -1,0 +1,34 @@
+-MS - make connection to socket
+-S - For forwarding
+-O - For dynamic
+
+
+set up connection to Jump Box:
+    ssh -MS /tmp/jump student@10.50.31.39
+         (file loc.)(user)   
+
+ping sweep:
+    for i in {1..254}; do (ping -c 1 192.168.28.$i | grep "bytes from" &); done
+
+dynamic port forward:
+  ssh -S /tmp/jump jump -O forward -D9050
+       ^            ^^
+       |        (filler word)
+(reference a prev. made socket file)
+
+port interogation:
+    nc 192.168.28.100 2222
+
+Port forward again:
+    ssh -S /tmp/jump jump -O forward <127.0.0.1:>2222:192.168.28.100:80 -L 3333:192.168.28.100:2222
+
+Port Interrogaion again:
+    proxychains mc 192.168.28.100 2222 (and 80)
+
+Port forwarding part 3???:
+    ssh -MS /tmp/t1 <creds>@127.0.0.1 -p 3333
+
+extra example:
+    ssh -S /tmp/t1 -O forward -L 6666:192.168.50.10:22 -L 7777:192.168.50.10:22
+
+    ssh -MS /tmp/t2 <creds>@127.0.0.1 -p 6666
