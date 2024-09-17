@@ -1,0 +1,67 @@
+Penetration testing - trying to get into a machine to measure how secure it is.
+
+Phase 1:
+    Define mission goals and targets
+    Determine scope of mission
+    Define RoE
+
+Phase 2: Recon
+    Information gathering about the target through the public sources
+
+Phase 3: Footprinting
+    Accumulate data through scanning and/or interaction with the target/target resources
+
+Phase 4: Exploitation and initial access
+    Gain an initial foothold on network
+
+Phase 5: Post-Exploitation
+    Establish Persistance
+    Escalate privileges
+    Cover your tracks
+    Exfiltrate target data
+
+Phase 6: Document Mission
+    Document and report mission details
+####################################################################################################################################################
+Operational Notes (OPNOTES) vs Formalized Reporting
+
+Penetration Test Reporting
+    Executive Summary
+    Technical Summary
+
+Penetration Test Reporting
+    Reasons to report
+    What to report
+    Screen captures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
