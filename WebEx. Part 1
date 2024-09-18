@@ -1,0 +1,73 @@
+sudo tcpdump -XXvvnni any tcp port 80 -A
+---------------------------------------------------------------------------------------------------------------------------------------------------
+HTTP Methods
+GET
+POST
+
+
+HTTP Response codes:
+10X = informational
+2XX = Success
+30X = Redirection
+4XX = Client Error
+5XX = Server Error
+
+HTTP Fields:
+User-agent    -->    whatever was used to communicate with the server. e.g. wget, curl, etc
+Referer    -->    Beyond the scope of COSC Security, apparently
+Cookie    -->    
+Date    -->    Sorry, not interested
+Server    -->    What software the server is using
+Set-cookie    -->    How the server tells the client to interpret certain info
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Utilize the URL to create a get request:
+http://10.50.x.x/path/pathdemo.php?myfile=demo1
+
+Wget:    --    Only use with FTP
+wget -r -l2 -P /tmp ftp://ftpserver/
+
+cURL
+    - Not recursive
+    - Can use pipes
+    - Upload ability
+    - Supports more protocols vs Wget, such as SCP & POP3
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+curl -o stuff.html https://web.site/stuff.html
+curl 'https://web.site/submit.php' -H 'Cookie: name=123; settings=1,2,3,4,5,6,7' --data 'name=Stan' | base64 -d > item.png
+---------------------------------------------------------------------------------------------------------------------------------------------------
+JavaScript (JS)
+    - Allows websites to interact with the client
+        - JavaScript runs on the client’s machine
+    - Coded as .js files, or in-line of HTML
+
+JS Interaction
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+<script src="https://www.w3schools.com/js/myScript1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
