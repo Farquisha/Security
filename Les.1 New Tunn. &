@@ -10,6 +10,9 @@ set up connection to Jump Box:
 ping sweep:
     for i in {1..254}; do (ping -c 1 192.168.28.$i | grep "bytes from" &); done
 
+nmap script:
+    nmap -T4 --script=http-enum
+
 dynamic port forward:
   ssh -S /tmp/jump jump -O forward -D9050
        ^            ^^
