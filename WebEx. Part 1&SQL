@@ -238,7 +238,7 @@ session
 GET method:
 
 Pay attention to the URL as you make selections.
-add ' OR 1='1
+add OR 1=1
 
 Identify vuln. number
 Find number of columns:
