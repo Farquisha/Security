@@ -1,0 +1,89 @@
+Ghidra, the tool we will be using, deals with x86-64 assembly.
+
+ASSEMBLY:
+16 general purpose registers
+%rax    -    first return register    -    
+%rbp    -    the base pointer that keeps track of the base of the stack
+%rsp    -    the stack pointer that points to the top of the stack
+arguments are typically passed in a way like this:
+    [%ebp-0x8]
+---------------------------------------------------------------------------------------------------------------------------------------------
+x86-64 assembly - Common Terms
+
+HEAP    -    Memory that can be allocated and deallocated
+STACK    -    A contiguous section of memory used for passing arguments
+General Register    -    Multipurpose register that can be used by either programmer or user to store data or a memory location
+Control Register    -    Processor register that changes or controls the behavior of the CPU
+Flags Register    -    Contains the current state of the processor
+---------------------------------------------------------------------------------------------------------------------------------------------
+x86-64 Assembly - Memory Offset
+one instruction pointer register that points to the memory offset of the next instructionin the code segment:
+64-bit: RIP
+Lower 32 bits: EIP
+Lower 16 bits: IP
+---------------------------------------------------------------------------------------------------------------------------------------------
+x86_64 Assembly - Common Instruction Pointers
+MOV    ☺    move source to destination
+
+PUSH    ☺    push source onto stack
+
+POP    ☺    Pop top of stack to destination
+
+INC    ☺    Increment source by 1
+
+DEC    ☺    Decrement source by 1
+
+ADD    ☺    Add source to destination
+
+SUB    ☺    Subtract source from destination
+
+CMP    ☺    Compare 2 values by subtracting them and setting the %RFLAGS register. ZeroFlag set means they are the same.      **flag in flag register
+
+JMP    ☺    Jump to specified location
+
+JLE    ☺    Jump if less than or equal
+
+JE    ☺    Jump if equal
+---------------------------------------------------------------------------------------------------------------------------------------------
+Reverse Engineering Workflow (Software):
+    - Static    -    string analysis
+    - Behavioral    -    run program (in isolated environment) and pay attention to how it behaves
+    - Dynamic    -    Use of a debugger
+    - Disassembly    -    builds it back into a higher level language
+    - Document Findings    -    
+---------------------------------------------------------------------------------------------------------------------------------------------
+sysinternals tools
+strings.exe
+get-content
+get-content -first 2 <executable>    -    see if windows exec. may result in something like: MZ♥♦ÿÿ¸@☺♫▼º♫´ Í!¸☺LÍ!This program cannot be run in DOS mode.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Software patching and applying patches to binary
+**Ask to go over this again**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
